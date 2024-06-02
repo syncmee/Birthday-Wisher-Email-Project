@@ -41,16 +41,11 @@ class Birthday_wishher:
                 completed_letter.write(new_letter)
 
     def emails(self):
-        PLACEHOLDER = "[NAME]"
         with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
             connection.login(user=email, password=password)
             for name in names:
-                random_letter = random.choice(letters)
-                stripped_name = name.strip().title()
-                new_letter = random_letter.replace(PLACEHOLDER, stripped_name)
-                with open(f"{stripped_name}.txt", mode="w") as completed_letter:
-                    completed_letter.write(new_letter)
+                self.letter()
                 check_email = birthdays[birthdays['name'] == name]
                 filtered_email = check_email.email.to_list()
                 name_titled = name.title()
