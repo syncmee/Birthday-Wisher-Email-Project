@@ -17,8 +17,8 @@ letters = [letter_file2,letter_file3]
 
 
 birthdays = pandas.read_csv("birthdays.csv")
-email = "bookmybus.info@gmail.com"
-password = "keqe hieq rgzp brwa"
+email = "example@email.com" # // put your email
+password = "############" # // put your app generated password from google account
 
 current_date = dt.date.today()
 current_month = current_date.month
